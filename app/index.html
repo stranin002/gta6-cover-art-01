@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vice Cover Studio</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main class="app">
+  <section class="controls">
+    <h1>Vice Cover Studio</h1>
+    <p>Any photo + a caption, made into multi-panel cover art. Offline, photos never leave your machine.</p>
+    <label>Photo 1 (hero) <input id="photo1" type="file" accept="image/*"></label>
+    <label>Photo 2 <input id="photo2" type="file" accept="image/*"></label>
+    <label>Photo 3 <input id="photo3" type="file" accept="image/*"></label>
+    <button id="samples" type="button">Use sample photos</button>
+    <label>Layout
+      <select id="layout"><option value="split">Split: hero + 2 panels</option><option value="hero">Hero: one photo</option><option value="triptych">Triptych: 3 panels</option></select>
+    </label>
+    <label>Colour grade
+      <select id="grade"><option value="sunset">Sunset</option><option value="neon">Neon</option><option value="noir">Noir</option></select>
+    </label>
+    <label>Caption <input id="caption" type="text" maxlength="40" value="Sunset Heist"></label>
+    <label>Subtitle <input id="subtitle" type="text" maxlength="40" value="Vice City Nights"></label>
+    <label>Zoom <input id="zoom" type="range" min="1" max="2" step="0.05" value="1"></label>
+    <label>Export size
+      <select id="size"><option value="1080x1080">1080 x 1080 square</option><option value="1080x1350">1080 x 1350 portrait</option><option value="1920x1080">1920 x 1080 wide</option></select>
+    </label>
+    <button id="export" type="button">Export PNG</button>
+    <p id="status" role="status"></p>
+  </section>
+  <canvas id="cover" width="1080" height="1080" aria-label="The cover"></canvas>
+</main>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
